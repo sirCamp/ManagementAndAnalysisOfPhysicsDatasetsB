@@ -1,4 +1,4 @@
-# Management and Analysis of Physics Datasets (Mod. B)
+# Management and Analysis of Physics Datasets (Mod. B) - 2019/2020
 Teaching Assistant Lectures for laboratorory of Management and Analysis of Physics Datasets course of Msc in Physic of Data @UniPD
 
 
@@ -7,3 +7,4 @@ Teaching Assistant Lectures for laboratorory of Management and Analysis of Physi
 + Introduction on wath is Dask
 + Bash command recap
 + Bash exercises
+
