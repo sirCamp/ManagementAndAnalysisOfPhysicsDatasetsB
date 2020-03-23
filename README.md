@@ -1,5 +1,5 @@
 # Management and Analysis of Physics Datasets (Mod. B)
-Teaching Assistant Lectures for laboratorory of Management and Analysis of Physics Datasets course of Msc in Physic of Data @UniPD
+Teaching Assistant Lectures for laboratorory of Management and Analysis of Physics Datasets course of Msc in Physic of Data @UniPD AY: 2018-2019
 
 ## Lecture 1
 + Slides on Dask and and Clsuter / HPC
