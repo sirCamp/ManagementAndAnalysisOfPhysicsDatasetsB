@@ -57,6 +57,8 @@ docker compose up --scale dask-worker=N
 *Please pay attention when you want to scale up the workers number, each worker is designed to have 1 core - 1 thread -1Gb of RAM.
 Do not exceed your machine resources* 
 
+*Please note that for some of you that use older version of docker have to install the docker compose ([here you can find how](https://docs.docker.com/compose/install/)), and the command should be replaced by ```docker-compose```*
+
 ## Virtual Machine Users
 
 If you prefer to use you VM in VirtualBox or your own machine before the lectures please install the following packages:
