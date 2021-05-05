@@ -1,0 +1,32 @@
+version: "3.6"
+services:
+  dask-scheduler:
+    image: sircamp/mapd:dask-scheduler
+    container_name: dask-scheduler
+    ports:
+      - 8787:8787
+      - 8786:8786
+    volumes:
+      - ./:/opt/workspace
+    environment:
+      - DASK_SCHEDULER_HOST=dask-scheduler
+  dask-worker:
+    image: sircamp/mapd:dask-worker
+    depends_on:
+      - dask-scheduler
+    volumes:
+      - ./:/opt/workspace
+    environment:
+      - DASK_WORKER_CORES=1
+      - DASK_WORKER_MEMORY=1GB
+      - DASK_WORKER_THREADS=1
+      - DASK_SCHEDULER_HOST=dask-scheduler
+  jupyterlab:
+    image: sircamp/mapd:dask-client-jupyter
+    container_name: jupyterlab
+    depends_on:
+      - dask-scheduler
+    ports:
+      - 8888:8888
+    volumes:
+      - ./:/opt/workspace
