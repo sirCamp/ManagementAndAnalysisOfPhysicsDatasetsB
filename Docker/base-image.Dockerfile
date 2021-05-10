@@ -37,7 +37,8 @@ RUN pip3 install  pandas \
    scikeras==0.3.3 \
    jupyter-server-proxy \
    dask_labextension \
-   jupyterlab-lsp
+   jupyterlab-lsp \
+   ipywidgets
 
 RUN jupyter labextension install dask-labextension
 RUN jupyter labextension install @jupyterlab/server-proxy

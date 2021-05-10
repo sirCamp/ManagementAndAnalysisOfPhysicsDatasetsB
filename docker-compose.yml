@@ -21,6 +21,45 @@ services:
       - DASK_WORKER_MEMORY=1GB
       - DASK_WORKER_THREADS=1
       - DASK_SCHEDULER_HOST=dask-scheduler
+  dask-worker-gpu-small:
+    image: sircamp/mapd:dask-worker
+    depends_on:
+      - dask-scheduler
+    volumes:
+      - ./:/opt/workspace
+    environment:
+      - DASK_WORKER_CORES=1
+      - DASK_WORKER_MEMORY=1GB
+      - DASK_WORKER_THREADS=1
+      - DASK_SCHEDULER_HOST=dask-scheduler
+      - DASK_WORKER_RESOURCES=1
+      - DASK_WORKER_RESOURCES_NAME=GPU
+  dask-worker-gpu-big:
+    image: sircamp/mapd:dask-worker
+    depends_on:
+      - dask-scheduler
+    volumes:
+      - ./:/opt/workspace
+    environment:
+      - DASK_WORKER_CORES=1
+      - DASK_WORKER_MEMORY=1GB
+      - DASK_WORKER_THREADS=1
+      - DASK_SCHEDULER_HOST=dask-scheduler
+      - DASK_WORKER_RESOURCES=3
+      - DASK_WORKER_RESOURCES_NAME=GPU
+  dask-worker-custom:
+    image: sircamp/mapd:dask-worker
+    depends_on:
+      - dask-scheduler
+    volumes:
+      - ./:/opt/workspace
+    environment:
+      - DASK_WORKER_CORES=1
+      - DASK_WORKER_MEMORY=1GB
+      - DASK_WORKER_THREADS=1
+      - DASK_SCHEDULER_HOST=dask-scheduler
+      - DASK_WORKER_RESOURCES=
+      - DASK_WORKER_RESOURCES_NAME=
   jupyterlab:
     image: sircamp/mapd:dask-client-jupyter
     container_name: jupyterlab

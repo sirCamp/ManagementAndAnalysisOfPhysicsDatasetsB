@@ -27,6 +27,7 @@ However, the next times you will need this container it will be created instantl
 ```
 docker run --rm -it \
         -p 8888:8888 \
+        -p 8787:8787 \
         -v $PWD:/opt/workspace \
         sircamp/mapd:parallel
 ```
@@ -46,7 +47,7 @@ As for the Spark part, this setup is simulating what you experience on a real cl
 This cluster can be spawned with 
 
 ```
-docker compose up
+docker compose up --scale dask-worker-custom=0 --scale dask-worker-gpu-big=0
 ```
 
 By default only one worker is created. If you want to use N workers you can scale the cluster with
@@ -59,6 +60,15 @@ Do not exceed your machine resources*
 
 *Please note that for some of you that use older version of docker have to install the docker compose ([here you can find how](https://docs.docker.com/compose/install/)), and the command should be replaced by ```docker-compose```*
 
+
+If you want to add "on the fly" new nodes with particular resource to the cluster (on a different CMD):
+```
+sudo docker-compose run  -e DASK_WORKER_RESOURCES=3 -e DASK_WORKER_RESOURCES_NAME=GPU dask-worker-custom
+```
+or
+```
+sudo docker-compose run  dask-worker-gpu-big
+```
 ## Virtual Machine Users
 
 If you prefer to use you VM in VirtualBox or your own machine before the lectures please install the following packages:
@@ -100,7 +110,14 @@ pip3 install  pandas \
 
 + Introduction on what is Dask
 + Parallel computing base
-+ Distributed computing base
++ ~~Distributed computing base~~
 + Examples
 + Exercises
+
+### Lecture 2
+
++ Distributed computing base
++ Dask Examples
++ Distributed ML  
++ Exercises discussion
 

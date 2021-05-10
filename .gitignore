@@ -131,3 +131,5 @@ dmypy.json
 
 dask-worker-space/
 .idea/
+.virtual_documents/
+solutions/
