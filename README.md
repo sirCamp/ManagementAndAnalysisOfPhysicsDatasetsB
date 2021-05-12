@@ -121,3 +121,10 @@ pip3 install  pandas \
 + Distributed ML  
 + Exercises discussion
 
+### Lecture 3
+
++ Lecture 2 remaining
++ Dask Bag
++ Dask dataframe  
++ Map Reduce Concepts
++ Exercises
